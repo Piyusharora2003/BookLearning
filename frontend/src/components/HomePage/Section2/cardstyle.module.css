@@ -1,0 +1,28 @@
+.body{
+    width: 20rem;
+    height: 38rem;
+    background: linear-gradient(5deg,#eee 55%,#fff 55.1%);
+
+}
+
+.image{
+    padding: 3%;
+    padding-bottom: 1%;
+    height: 65%;
+}
+
+.title{
+    font-size: 1.2rem;
+    word-spacing: 0.9;
+    height: 28%;
+    overflow: hidden;
+}
+
+.btn{
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+}
+
+
+
+

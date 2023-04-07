@@ -1,0 +1,12 @@
+.prevbtn{
+    position: fixed;
+    bottom: 1rem;
+    left: 2rem;
+    font-size: 1.7rem;
+    color: black;
+    background-color: transparent;
+}
+
+.total{
+    font-weight: 700;
+}

@@ -11,8 +11,6 @@ function NoPage() {
             <li className="list-group-item text-decoration-line-through">Token retriving from browser </li>
             <li className="list-group-item"> state management properly</li>
             <li className="list-group-item"> Learn Usecallback</li>
-            <li className="list-group-item">Remove Alerts , Add Toastify</li>
-            <li className="list-group-item"> Add element to cart and store data concurrently to mongodb</li>
             <li className="list-group-item">Popular Books in Home Page Currently the first eight books only </li>
         </ol>
     </div>

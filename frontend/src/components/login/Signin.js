@@ -4,8 +4,11 @@ import axios from 'axios';
 import { useDispatch  } from 'react-redux';
 import { addUser } from '../../redux/slices/userSlice';
 import isEmail from 'validator/lib/isEmail';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function Signin({setpage,page}) {
+    const navigate = useNavigate();
+    const {state} = useLocation();
 
     const dispatch = useDispatch();
     const [credentials,setcredentials] = useState({
@@ -31,7 +34,6 @@ function Signin({setpage,page}) {
         alert(message)
     }
     function LoginUserHandle(res){
-        console.log(res);
         dispatch(addUser({
             token:res.data.token,
             name:res.data.user.name,
@@ -43,6 +45,9 @@ function Signin({setpage,page}) {
         }));      
         localStorage.setItem("token", res.data.token)
         localStorage.setItem("id",res.data.user._id)
+        alert(`User ${res.data.user.name} logged in successfully`);
+        navigate('/');
+        // console.log(state);
         window.location.reload()
     }
 
@@ -65,7 +70,9 @@ function Signin({setpage,page}) {
         return false;
     }
     
+
   return (
+    
     <div className={`container  h70  m-auto p-4`} >
         <div className={`row  ${styles.wMax} `}>
             <div className={`col-lg-10 col-xl-7  p-4 mx-auto ${styles.box}`}> 

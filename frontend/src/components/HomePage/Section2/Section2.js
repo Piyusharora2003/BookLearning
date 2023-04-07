@@ -31,7 +31,7 @@ function Section2() {
               <Swiper spaceBetween={10} slidesPerView={noperslide}>
               {
                   arr.map((elem)=>{
-                      return <SwiperSlide className={style2.centerbox} key={elem._id}> <Cardsec2 {...elem}/></SwiperSlide>
+                      return <SwiperSlide className={style2.centerbox} key={elem._id}> <Cardsec2 {...elem} key={elem._id}/></SwiperSlide>
                   })
               }
               </Swiper>

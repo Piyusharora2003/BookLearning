@@ -7,7 +7,7 @@ import axios from 'axios';
 import { removeUser } from '../../redux/slices/userSlice';
 
 
-function Dashboard() {
+function Dashboard({changeLoginStatus}) {
     const navigate = useNavigate();
     const states = useSelector((state)=>state);
     const dispatch = useDispatch()
@@ -20,6 +20,7 @@ function Dashboard() {
         localStorage.removeItem("id")
         localStorage.removeItem("time")
         navigate("../")
+        changeLoginStatus(false)
         // console.log(states) // correct this 
      }
     
@@ -52,7 +53,7 @@ function Dashboard() {
               </tbody>
             </table>
             <div className={styles.centerbtn}>
-                <button type="button" className="btn btn-danger" onClick={handleLogout}>Log Out</button>
+                <button type="button" className="btn btn-danger" onClick={handleLogout} >Log Out</button>
             </div>
 
 

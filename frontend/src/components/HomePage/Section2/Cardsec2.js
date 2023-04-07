@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import {addItem} from  '../../../redux/slices/cartSlice'
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { addItemToCart } from '../../../redux/slices/userSlice';
 
 
 function Cardsec2(props) {
@@ -14,11 +15,12 @@ function Cardsec2(props) {
     des+="...."
     function dispatchcall(){
 
-        dispatch(addItem({
-            id:_id,
+        dispatch(addItemToCart({
+            productId:_id,
             name:title,
             price:price,
-            quantity:1
+            quantity:1,
+            image:image
         }))
 
         // toast(,{className:`{cardstyle.toast}`});

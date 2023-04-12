@@ -4,11 +4,10 @@ import axios from 'axios';
 import { useDispatch  } from 'react-redux';
 import { addUser } from '../../redux/slices/userSlice';
 import isEmail from 'validator/lib/isEmail';
-import { useLocation, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 
 function Signin({setpage,page}) {
     const navigate = useNavigate();
-    const {state} = useLocation();
 
     const dispatch = useDispatch();
     const [credentials,setcredentials] = useState({

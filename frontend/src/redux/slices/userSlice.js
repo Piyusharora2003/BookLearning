@@ -51,7 +51,6 @@ const userSlice = createSlice({
                     Authorization: `Bearer ${state.token}` //Add this line
                   };
                 const res = await axios.put(`http://localhost:2000/api/v1/updateuser/${state.id}`,{"itemsincart":state.itemsincart});
-                console.log(res);
             }
             pushtocartdb()
         },

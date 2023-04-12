@@ -22,7 +22,7 @@ function Section1() {
 
             <div className={style1.right}>
                 {/* image here */}
-               <img src={img} className={style1.img}/>
+               <img src={img} alt="BookShelf" className={style1.img}/>
             </div>
         </div>
     </section>

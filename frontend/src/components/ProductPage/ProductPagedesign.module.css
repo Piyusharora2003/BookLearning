@@ -1,0 +1,255 @@
+.main{
+    padding: 2.5rem 4%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.img{
+    padding: 3rem;
+    height: 40rem;
+}
+
+.right{
+    align-items:flex-start;
+    height: 36rem;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.title{
+    font-size: 3.5rem;
+}
+
+.author{
+    font-size: 1.2rem;
+    color: rgb(84, 84, 84);
+}
+
+.description{
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    padding-top: 0.9rem;
+}
+
+.price{
+    font-size: 2.3rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+
+}
+
+.addToCart{
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 1.2rem;
+    overflow: hidden;
+    padding: 0.6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color:rgba(33, 33, 223, 0.616);
+    border-radius: 1rem;
+    cursor: default;
+}
+
+.addToCart:hover{
+    cursor:pointer;
+}
+
+/* section QNA */
+.qnasection{
+    width: 86%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;    
+    flex-wrap: wrap;
+}
+
+.h1{
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.leftqna{
+    width: 60%;
+    min-width: calc(min(600px,80vw));
+}
+
+.rightqna{
+    width: 35%;
+}
+
+
+
+
+
+
+.body{
+    width: 86%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading{
+    margin: auto;
+    padding-top: 0.7rem;
+}
+
+
+
+.allreviews{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.leftpart{
+    max-width: calc(60%-1rem);
+}
+
+.rightpart{
+    width: 35%;
+    max-width: calc(40%-1rem);
+    height: 300px;
+}
+
+
+
+.testimonials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+    padding-left: 2rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    padding-right: 2rem;
+    height: 12rem;
+    max-width: calc(min(380px,80vw));
+    
+}
+
+
+.testimonialBoxContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width:100%;
+}
+.testimonialBox{
+    width:100%;
+    padding: 10px;
+    cursor: pointer;
+}
+.profileImg{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+.profileImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.profile{
+    display: flex;
+    align-items: center;
+}
+.nameUser{
+    display: flex;
+    gap: 8px;
+    flex-direction: row;
+}
+.nameUser strong{
+    color: #3d3d3d;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+.reviews{
+    color: #f9d71c;
+}
+.boxTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.clientComment p{
+    font-size: 0.9rem;
+    color: #4b4b4b;
+}
+
+.editReview{
+    transform: translateY(5.2px);
+}
+
+
+@media screen and (max-width: 991px) {
+    .leftpart {
+        width: 78vw;
+        margin: auto;
+    }
+    .main{
+        padding: 3rem 2rem;
+    }
+    .row{
+        flex-direction: column;
+    }
+    .left{
+        width: auto;
+    }
+    .img{
+        height: 60vh;
+        padding: 0%;
+        width: auto;
+    }
+    
+    .right{
+        width: 100%;
+    }
+
+    .title{
+        font-size: calc(min(2.5rem,30px));
+    }
+    .author{
+        font-size: calc(min(2rem,25px));
+    }
+    .description{
+        font-size: calc(min(1.7rem,16.7px));
+        padding: 8px;
+    }
+    .price{
+        width: 100%;
+        text-align: center;
+        font-size: 2.4rem;
+    }
+    .addToCart{
+        margin: auto;
+    }
+}

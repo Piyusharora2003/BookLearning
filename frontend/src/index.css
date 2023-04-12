@@ -33,3 +33,14 @@ html{
     box-shadow: none;
 }
 /* ends here border removal */
+
+.border-none{
+    border: none;
+}
+
+.w-100{
+    width: 100%;
+}
+.bg-none{
+    background-color: inherit;
+}

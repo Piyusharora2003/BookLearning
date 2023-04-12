@@ -55,6 +55,30 @@ const UserSchema = new mongoose.Schema({
             },
           },
         ],
+        orders:[{
+            name: {
+              type: String,
+              required: true,
+            },
+            price: {
+              type: Number,
+              required: true,
+            },
+            quantity: {
+              type: Number,
+              required: true,
+            },
+            image: {
+              type: String,
+              required: true,
+            },
+            productId: {
+              type: mongoose.Schema.ObjectId,
+              ref: "Books",
+              required: true,
+            },
+          },
+        ],
         password:{
           type:String,
           required:true,

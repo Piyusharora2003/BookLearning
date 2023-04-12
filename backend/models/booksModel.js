@@ -27,7 +27,28 @@ const bookSchema = new mongoose.Schema({
         bookpdf:{
             type:String,
             required:true
-        }
+        },
+        reviews:[{
+            userid:{
+                type: mongoose.Schema.ObjectId,
+                ref: "Users",
+                required: true,
+                unique:true
+            },
+            name: {
+                type: String,
+                required: true,
+            },
+            rating:{
+                type:Number,
+                require:true,
+                min:0,
+                max:5
+            },
+            description:{
+                type:String,
+            }            
+        }]
 })
 
 module.exports = mongoose.model("Books",bookSchema);

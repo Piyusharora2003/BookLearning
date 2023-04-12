@@ -93,5 +93,27 @@ exports.deleteBook = (async (req,res)=>{
 
 })
 
+exports.removeReview = (async (req,res)=>{
+    const productId = req.params.productid;
+    try {
+        const book = await Books.findById(productId);
+        const reviewList = book.reviews;
+        const newReviewlist = reviewList.filter(e => e._id != req.params.reviewid );
+        book.reviews = newReviewlist;
+
+        await book.save()
+        res.status(200).json({
+            success:true,
+            book
+        })
+        
+    } catch (error) {
+        res.status(404).json({
+            success:false,
+            "message":"Error in removing review right now ",
+                error
+        }) 
+    }
+})
 
 

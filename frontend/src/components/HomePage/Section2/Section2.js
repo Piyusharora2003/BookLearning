@@ -1,10 +1,9 @@
 import React,{useRef ,useContext} from 'react';
-import { UserContext } from '../Home';
 import { Swiper ,SwiperSlide } from 'swiper/react';    // for corosel
 import 'swiper/css';
 import style2 from "./style2.module.css";
-
 import Cardsec2 from './Cardsec2';
+import { UserContext } from '../../../App';
 
 function Section2() {
   // Sets No of elements in the slider according to screen size

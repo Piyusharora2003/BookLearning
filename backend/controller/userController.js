@@ -1,6 +1,7 @@
 const userModel = require("../models/userModel");
 const Users = require("../models/userModel");
 const sendToken = require("../utils/jwttoken");
+const Books = require("../models/booksModel");
 
 exports.createUser =(async (req,res)=>{
     try {
@@ -50,7 +51,6 @@ exports.getuserdetails = (async (req,res)=>{
 exports.getmydetailid = (async (req,res)=>{
     try {
         const user =await Users.findById(req.body.id);
-        console.log(user);
         res.status(200).json({
             success:true,
             user
@@ -174,5 +174,69 @@ exports.logOut = (async (req,res)=>{
             "message":"Error in Loging Out",
                 error
         })  
+    }
+})
+
+
+exports.removeFromCart = (async (req,res)=>{
+    const itemId = req.params.productId;
+    try {
+        const user = await Users.findById(req.params.userId);
+        // console.log(user);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // console.log([...user.itemsincart]);
+        const newitemlist = user.itemsincart.filter(item=> (item.productId) != (itemId))  //stops here
+        user.itemsincart = newitemlist;
+        // console.log(user.itemsincart);
+        await user.save()
+        res.status(200).json({
+            success:true,
+            user
+        })
+        
+    } catch (error) {
+        res.status(404).json({
+            success:false,
+            "message":"Error in removing item right now ",
+                error
+        }) 
+    }
+})
+
+exports.addReview = (async(req,res)=>{
+    try {
+        let userid = req.params.userId;
+        const user = await Users.findById(req.params.userId);
+        const item = await Books.findById(req.params.productId);
+        if(!user){
+            return res.status(404).json({ message: 'User not found' });
+        }
+        if(!item){
+            return res.status(404).json({ message: 'Book not found' });
+        }
+        let newReview = {
+            description:req.body.description,
+            name:user.name,
+            rating:req.body.rating,
+            userid:userid
+           }
+        let newReviewList = [...item.reviews,newReview];
+        item.reviews = newReviewList;
+        let resp = await item.save();
+        res.status(200).json({
+            success:true,
+            user
+        })
+                
+
+    } catch (error) {
+        res.status(404).json({
+            success:false,
+            "message":"Error in removing item right now ",
+                error
+        })   
     }
 })

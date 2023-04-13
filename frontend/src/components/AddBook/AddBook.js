@@ -10,6 +10,7 @@ function Login() {
         "author":"",
         "description":"",
         "price":0,
+        "mrp":0,
         "image":"",
         "bookpdf":""
     });
@@ -23,7 +24,7 @@ function Login() {
     async function submit(){
         const bookname = newbook.title;
         await axios.post("http://localhost:2000/api/v1/addnewbook",newbook).then((res)=>{console.log(res)});
-        adddetail({  "title":"",  "author":"",  "description":"s",  "price":0,  "image":"",  "bookpdf":"" });
+        adddetail({  "title":"",  "author":"",  "description":"s",  "price":0,"mrp":0,  "image":"",  "bookpdf":"" });
         alert(`Book ${bookname} added Successfully`);
     }
     
@@ -60,6 +61,10 @@ function Login() {
                           <div className="form-group">
                               <label className={styles.label} htmlFor="price">price (in Rs)</label>
                               <input className={`form-control`} id="price" type="Number" name="price" onChange={(e)=>updateDetails(e)} value={newbook.price}/>
+                          </div>
+                          <div className="form-group">
+                              <label className={styles.label} htmlFor="mrp">Max Selling Price (in Rs)</label>
+                              <input className={`form-control`} id="mrp" type="Number" name="mrp" onChange={(e)=>updateDetails(e)} value={newbook.mrp}/>
                           </div>
                           <div className="form-group">
                               <label className={styles.label} htmlFor="image">image link</label>

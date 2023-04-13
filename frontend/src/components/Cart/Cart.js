@@ -10,9 +10,12 @@ function Cart(props) {
     let itemList = [...items];
     let pricecart = 0 ;
     let quant =  0;
+    let orignalpricecart = 0;
     itemList.forEach(element => {
+      console.log(element);
       quant+=element.quantity;
       pricecart+=element.price *element.quantity;
+      orignalpricecart+=element.mrp *element.quantity;
     });
     let tax = 0.18*pricecart.toPrecision(2);
 
@@ -44,6 +47,7 @@ function Cart(props) {
       <th scope="col" className={styles.productId}>Product_ID</th>
       <th scope="col">Name</th>
       <th scope="col">Price </th>
+      <th scope="col"> MRP </th>
       <th scope="col">Quantity</th>
       <th scope="col">Discard</th>
       <th scope="col">image</th>
@@ -56,6 +60,7 @@ function Cart(props) {
       <th scope="row" className={styles.productId}>{e.productId}</th>
       <td>{e.name}</td>
       <td>{e.price}</td>
+      <td>{e.mrp}</td>
       <td>{e.quantity}</td>
       <td><button  className={`bg-none`} onClick={()=>removeFromCart(e.productId)}><i className="fa-solid fa-trash"></i></button></td>
       <td><img src={e.image} alt={e.name} className={styles.img}/></td>
@@ -63,21 +68,29 @@ function Cart(props) {
     })
 }
 <tr className="table border border-none ">
-      <th scope="row "></th>
+      <th className={styles.productId}></th>
       <td className={styles.total}>Net Sum</td>
       <td className='fw-bold'>{pricecart}</td>
+      <td>{orignalpricecart}</td>
       <td className='fw-bold'>{quant}</td>
       <td></td>
 </tr>
 <tr className="table border border-none">
-      <th scope="row"></th>
+      <th scope="row" className={styles.productId}></th>
+      <td className={styles.total}>Discount </td>
+      <td className='fw-bold'>{(pricecart && orignalpricecart)?(100-(pricecart/orignalpricecart)*100).toPrecision(2) : 0}%</td>
+      <td></td>
+      <td></td>
+</tr>
+<tr className="table border border-none">
+      <th scope="row" className={styles.productId}></th>
       <td className={styles.total}>Tax @18%</td>
       <td className='fw-bold'>{tax}</td>
       <td></td>
       <td></td>
 </tr>
 <tr className="table-danger">
-      <th scope="row"></th>
+      <th scope="row" className={styles.productId}></th>
       <td className={styles.total}>Total Chargeable Amount (in Rs.)</td>
       <td className='fw-bold'>{pricecart+tax}</td>
       <td></td>

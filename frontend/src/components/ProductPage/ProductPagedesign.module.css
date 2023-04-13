@@ -6,72 +6,55 @@
     gap: 1.5rem;
 }
 
-
-.row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-    gap: 1.5rem;
-    align-items: center;
+.figcap{
+    padding: 0;
+    margin: 0;
+    font-size: 0.7rem;
 }
 
-.left{
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-}
-.img{
-    padding: 3rem;
-    height: 40rem;
+.ratingCALC{
+    font-size:1rem;
+    padding-top: 0.2rem;
+    /* padding-bottom; */
+    padding-inline: 0.5rem;
 }
 
-.right{
-    align-items:flex-start;
-    height: 36rem;
-    display: flex;
-    flex-direction: column;
-    width: 60%;
+.reviewsCount{
+    text-decoration: none;
+    color: coral;
+    font-size: 1rem;
+    font-weight: bolder;
+    letter-spacing:0.3px;
+    padding-left: 0.5rem;
 }
 
-.title{
-    font-size: 3.5rem;
+.ratingstar{
+    font-size: 0.7rem;
+    padding: 0%;
+    transform: translate( 2px,-2px);
 }
 
-.author{
-    font-size: 1.2rem;
-    color: rgb(84, 84, 84);
+.priceTag{
+    font-size: 1.8rem;
+    font-weight: 500;
 }
 
-.description{
-    font-size: 1.2rem;
-    padding: 0.5rem;
-    padding-top: 0.9rem;
+.maximumTag{
+    font-size: 1.16rem;
+    padding-left: 0.6rem;
 }
 
-.price{
-    font-size: 2.3rem;
-    margin-top: 1.2rem;
-    margin-bottom: 1.2rem;
-
+.discountTag{
+    color: var(--green);
+    padding-left: 0.7rem;
+    font-size: 1.5rem;
+    font-weight: 470;
 }
 
-.addToCart{
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-top: 1.2rem;
-    overflow: hidden;
-    padding: 0.6rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    background-color:rgba(33, 33, 223, 0.616);
-    border-radius: 1rem;
-    cursor: default;
-}
 
-.addToCart:hover{
-    cursor:pointer;
-}
+
+
+
 
 /* section QNA */
 .qnasection{
@@ -210,46 +193,73 @@
 }
 
 
+
 @media screen and (max-width: 991px) {
-    .leftpart {
-        width: 78vw;
-        margin: auto;
-    }
     .main{
         padding: 3rem 2rem;
     }
-    .row{
-        flex-direction: column;
-    }
-    .left{
-        width: auto;
-    }
-    .img{
-        height: 60vh;
-        padding: 0%;
-        width: auto;
-    }
-    
-    .right{
-        width: 100%;
-    }
-
-    .title{
-        font-size: calc(min(2.5rem,30px));
-    }
-    .author{
-        font-size: calc(min(2rem,25px));
-    }
-    .description{
-        font-size: calc(min(1.7rem,16.7px));
-        padding: 8px;
-    }
-    .price{
-        width: 100%;
-        text-align: center;
-        font-size: 2.4rem;
-    }
-    .addToCart{
-        margin: auto;
-    }
 }
+
+
+
+
+
+
+.productInfo{
+    width: 89vw;
+    margin-left: auto;
+    margin-right: auto;
+    /* border: 2px solid rebeccapurple; */
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    margin-top: 3.3rem;
+}
+
+.stack{
+    display: flex;
+    flex-direction: column; 
+    width: 23rem;
+    align-items: center;
+}
+
+.productImage{
+    width: 18rem;
+    height: 24rem;
+}
+
+.push{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    width: 18.5rem;
+    transform: translateX(-0.25rem);
+}
+
+.btns{
+    border-radius: 0%;
+    width: 47%;
+}
+
+.rightstack{
+    width: 72%;
+    padding: 10px;
+}
+
+.title{
+    font-weight: 550;
+    font-size: 1.8rem;
+}
+
+.author{
+    margin-top: 1rem;
+    color: var(--green);
+    font-weight: 650;
+}
+
+ .description{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ }

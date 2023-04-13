@@ -82,7 +82,7 @@ function App() {
           <Routes>
               <Route path="/" exact element={<Home />}/>
               <Route path="/dashboard" exact element={
-                    <LoginProtector isLogin={isLogin}>
+                    <LoginProtector isLogin={isLogin} >
                       <Dashboard  changeLoginStatus={changeLoginStatus} path="/dashboard" />
                     </LoginProtector>
                   }

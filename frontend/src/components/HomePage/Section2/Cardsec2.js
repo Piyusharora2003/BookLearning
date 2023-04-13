@@ -13,7 +13,7 @@ function Cardsec2(props) {
 
 
 
-    const {author,title, description , price,image,_id} = props;
+    const {author,title, description , price,mrp,image,_id} = props;
     let des = description
     des = des.slice(0,100);
     des+="...."
@@ -24,6 +24,7 @@ function Cardsec2(props) {
             productId:_id,
             name:title,
             price:price,
+            mrp:mrp,
             quantity:1,
             image:image
         }))

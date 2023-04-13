@@ -1,6 +1,8 @@
 const jwt = require("jsonwebtoken")
 const Users = require("../models/userModel");
 const { getbooks } = require("../controller/booksController");
+require('dotenv').config();
+
 
 exports.isAuthentictedUser = (async (req,res,next)=>{
 
@@ -13,7 +15,7 @@ exports.isAuthentictedUser = (async (req,res,next)=>{
             })
         }
         else{
-            const decodedData = jwt.verify(token,"sakalaka")
+            const decodedData = jwt.verify(token,process.env.JWT_Secret)
             req.user = await Users.findById(decodedData.id);
             next();
         }

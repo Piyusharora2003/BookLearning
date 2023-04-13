@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
-
-const Url = "mongodb+srv://booksnerd:1003%40merndspro@booksproject.lcekstm.mongodb.net/?retryWrites=true&w=majority";
-            //  mongodb+srv://booksnerd:<password>    @booksproject.lcekstm.mongodb.net/?retryWrites=true&w=majority
-
+require('dotenv');
+const Url = process.env.URL
 const connectDatabase = () => {
     mongoose
       .connect(Url)

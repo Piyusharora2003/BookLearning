@@ -1,0 +1,39 @@
+.body{
+    width: 20rem;
+    height: 37rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(5deg,#eee 55%,#fff 55.1%);
+    text-decoration: none;
+}
+.body:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; 
+    scale: 1.02;
+}
+
+.image{
+    padding: 3%;
+    padding-bottom: 1%;
+    height: 65%;
+}
+
+.title{
+    font-size: 1.2rem;
+    word-spacing: 0.9;
+    height: 28%;
+    overflow: hidden;
+    cursor:default;
+}
+
+.description{
+    cursor: default;
+}
+
+.btn{
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+}
+
+
+
+

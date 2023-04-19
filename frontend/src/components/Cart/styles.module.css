@@ -1,0 +1,35 @@
+.prevbtn{
+    position: fixed;
+    bottom: 1rem;
+    left: 2rem;
+    font-size: 1.7rem;
+    color: black;
+    background-color: transparent;
+}
+
+.total{
+    font-weight: 700;
+}
+
+.img{
+    width: 40px;
+}
+
+.orderNowbtn{
+    position: fixed;
+    bottom: 1rem;
+    right: 2rem;
+    font-size: 1.7rem;
+    color: black;
+    padding: 0.3rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    border-radius: 1.4rem;
+    background-color: rgb(66, 176, 66);
+}
+
+@media screen and (max-width: 991px) {
+    .productId{
+        display: none;
+    }
+}

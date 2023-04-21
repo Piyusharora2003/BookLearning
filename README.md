@@ -1,5 +1,7 @@
 BookLearning
-This is an eCommerce-dataLearning  project for selling books online as well to provide personalised service to user. It is built using the MERN stack (MongoDB, Express.js, Node.js, and React) and utilizes various additional technologies such as Validator, Bcrypt, Body-parser, Cors, Python Flask, Data Mining, Nodemon, Dotenv, React Router, and Toastify. This project is primarily a learning project aimed at strengthening understanding of the MERN stack and data science concepts. The goal of this project is to provide a personalized experience to users when purchasing books online.
+is an E-Commerce MachineLearning  project for selling books online with custom services to the users. It is built using MERN stack (MongoDB, Express.js, Node.js, and React) and utilizes various additional technologies such as Validator, Bcrypt, Body-parser, Cors, Flask, Data Mining, Nodemon, Dotenv, React Router, and Toastify. This project is primarily a learning project aimed at strengthening understanding of the MERN stack and data science concepts. The goal of this project is to provide a personalized experience to the users while purchasing books online.
+
+Project Creators- Piyush Arora (https://www.linkedin.com/in/piyush-arora-378986259/) & Tisha(https://www.linkedin.com/in/tisha-tisha-4b207322a)
 
 
 ![image](https://user-images.githubusercontent.com/74443858/233727712-8eb46d47-15b8-45c5-8e96-19a4e4729256.png)

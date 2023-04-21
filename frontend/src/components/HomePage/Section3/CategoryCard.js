@@ -1,16 +1,18 @@
 import React from 'react'
 import styles from "./Categories.module.css";
+import { useNavigate } from 'react-router';
 
 function CategoryCard(props) {
-    
+  const navigate = useNavigate();
+  function navi(Categori){
+    navigate(`/books/${Categori}`);
+  }
   return (
-   <div className={styles.item}>
-    <img className={styles.img} src="https://images.pexels.com/photos/77171/pexels-photo-77171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""/>
-    <div className={styles.overlay}>
-      <span>Great Britain</span>
+   <div className={styles.item} onClick={(e)=>navi(props.category)}  >
+    <img className={styles.img} src={props.categoryImage} alt=""/>
+    <div className={`${styles.overlay} `}>
+      <span className={`bg-warning text-dark rounded-pill p-2`}  >{props.category}</span>
       <div>
-        <h2>{props.category}</h2>
-        <p>12 Popular places</p>
       </div>
     </div>
   </div>

@@ -3,10 +3,7 @@ import styles from "./Section2.module.css";
 import Cardsec2 from './Cardsec2';
 import { UserContext } from '../../../App';
 
-
-
-import { Swiper ,SwiperSlide } from 'swiper/react';    // for corosel
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Swiper ,SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -27,12 +24,19 @@ function Section2() {
     let arr =[...books].slice(0,8)    // currently taking the first eight products only
     return (
       <div className={styles.main}>
-      <h2 className={styles.heading}>Trending Picks</h2>
-      <Swiper id="trendingSwiper"   spaceBetween={40}
+          <h1 className={styles.heading}>
+          <span>
+              famous books
+          </span>
+          </h1>
+
+      <div className={` ${styles.btnParent}`}>
+      <Swiper id="trendingSwiper" 
       slidesPerView={noperslide} className={styles.swiper}
-        >      {arr.map((elem)=>{
-          return <SwiperSlide key={elem._id}><Cardsec2 {...elem}  key={elem}/></SwiperSlide>
+      >      {arr.map((elem)=>{
+        return <SwiperSlide key={elem._id}><Cardsec2 {...elem}  key={elem}/></SwiperSlide>
       })}
+      </Swiper>
       <button className={styles.btnPrev} onClick={()=>{
         document.getElementById("trendingSwiper").scrollBy(-300,0);
       }}><i className="fa-solid fa-arrow-left"></i></button>
@@ -40,7 +44,7 @@ function Section2() {
       <button className={styles.btnNext} onClick={()=>{
         document.getElementById("trendingSwiper").scrollBy(300,0);
       }}><i className="fa-solid fa-arrow-right"></i></button>
-      </Swiper>
+      </div>
   </div>
   )
 }

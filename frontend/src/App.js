@@ -16,6 +16,7 @@ import Login from './components/login/Login';
 import Dashboard from './components/Dashboard/Dashboard';
 import ProductPage from './components/ProductPage/ProductPage';
 import Loader from './components/Loader/Loader';
+import CategoryPage from './components/CategoryPage/CategoryPage';
 
 const UserContext = createContext();
 
@@ -95,6 +96,9 @@ function App() {
                 />
               <Route path="/bookCollection/:id" exact  element={
                 <ProductPage />
+              } />
+              <Route path="/books/:category" exact  element={
+                <CategoryPage/>
               } />
               <Route path="/cart" exact element={<Cart isLogin={isLogin} />}/> 
               <Route path="/login" exact element={<Login />}/> 

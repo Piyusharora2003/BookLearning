@@ -20,6 +20,9 @@ const bookSchema = new mongoose.Schema({
             type:Number,
             default:0
         },
+        metatags:{
+            type:String
+        },
         mrp:{
             type:Number,
             default:0

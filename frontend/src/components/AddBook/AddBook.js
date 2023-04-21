@@ -24,7 +24,7 @@ function Login() {
     async function submit(){
         const bookname = newbook.title;
         await axios.post("http://localhost:2000/api/v1/addnewbook",newbook).then((res)=>{console.log(res)});
-        adddetail({  "title":"",  "author":"",  "description":"s",  "price":0,"mrp":0,  "image":"",  "bookpdf":"" });
+        adddetail({  "title":"",  "author":"",  "description":"","metatags":"",  "price":0,"mrp":0,  "image":"",  "bookpdf":"" });
         alert(`Book ${bookname} added Successfully`);
     }
     
@@ -39,7 +39,7 @@ function Login() {
   return (
 <div className={`container-fluid ${styles.bdy}`}>
     <div className={`row no-gutter`}>
-        <div className={`col-md-5 bg-light`}>
+        <div className={`col-md-5 bg-light ${styles.left}`}>
             <Link to="/" className={styles.prevbtn}><i className="fa-sharp fa-solid fa-arrow-left"></i></Link>
             <div className={` ${styles.login} d-flex  py-5 pe-3`}>
                     <div className={styles.title}>
@@ -54,9 +54,14 @@ function Login() {
                               <label className={styles.label} htmlFor="author">author</label>
                               <input className={`form-control`} id="author" type="text" name="author" onChange={(e)=>updateDetails(e)} value={newbook.author} />
                           </div>
+                          <div>&lt;---Categories List to be Inserted Here---&gt;</div>
                           <div className="form-group">
-                              <label className={styles.label} htmlFor="author">description</label>
+                              <label className={styles.label} htmlFor="description">Description</label>
                               <input className={`form-control`} id="description" type="text" name="description"  onChange={(e)=>updateDetails(e)} value={newbook.description}/>
+                          </div>
+                          <div className="form-group">
+                              <label className={styles.label} htmlFor="metatags">Meta-Tags</label>
+                              <input className={`form-control`} id="metatags" type="text" name="metatags"  onChange={(e)=>updateDetails(e)} value={newbook.metatags}/>
                           </div>
                           <div className="form-group">
                               <label className={styles.label} htmlFor="price">price (in Rs)</label>

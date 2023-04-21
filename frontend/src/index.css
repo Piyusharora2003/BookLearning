@@ -65,3 +65,11 @@ html{
 .bg-none{
     background-color: inherit;
 }
+
+.form-control{
+    color: #27ae60;
+}
+.form-control:focus{
+   border-color: black;
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}

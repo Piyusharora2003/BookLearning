@@ -52,6 +52,11 @@
 
 .note{
   position: fixed;
-  bottom: 1.3vh;
+  bottom: 0.2vh;
   color: rgb(255, 51, 51);
+  font-size: smaller;
+}
+
+.left{
+  overflow: scroll; 
 }

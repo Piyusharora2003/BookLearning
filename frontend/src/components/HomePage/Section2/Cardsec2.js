@@ -57,13 +57,6 @@ import { addItemToCart } from '../../../redux/slices/userSlice';
 //             <p className={`card-text ${cardstyle.description} `}  onClick={e=>{navigateCall()}} >{des}</p>
 //             <button  className={`btn btn-secondary ${cardstyle.btn}`} onClick={e=> {dispatchcall();}}>Add To cart for ${price}  &nbsp;
 //             <i className="fas fa-cart-shopping"></i>
-//             </button>
-//             </div>
-//         </div>
-//   )
-// }
-
-// export default Cardsec2;
 
 import * as React from 'react';
 import styles from "./Section2.module.css"
@@ -114,8 +107,9 @@ function Cardsec2(props) {
             <div className={`text-center fw-bold text-secondary fs-6`}>{author}</div>
         </div>
         <div className="d-flex flex-column w-88 ms-auto me-auto">
+        <button className={`btn btn-danger mb-2`}> ₹{price}   <i className="fa-solid fa-tag"></i></button>
         <button className={`btn btn-primary mb-2`} onClick={e=> {dispatchcall();} }>Add To cart <i className="fa-sharp fa-solid fa-cart-plus"></i></button>
-        <button className={`btn btn-primary`} onClick={navigateCall}>Read More  <i className="fa-solid fa-eye fa-xs"></i></button>
+        <button className={`btn btn-warning`} onClick={navigateCall}>Read More  <i className="fa-solid fa-eye fa-xs"></i></button>
         </div>
     </div>
   </div>  )

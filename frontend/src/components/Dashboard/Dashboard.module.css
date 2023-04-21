@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 .main{
     height: 100vh;
     overflow: hidden;
     background-color: rgb(251, 228, 223);
 }
 
+=======
+>>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
 .prevbtn{
     position: fixed;
     top: 1rem;
@@ -33,6 +36,7 @@
 }
 .centerbtn button{
     margin: auto;
+<<<<<<< HEAD
 }
 
 .editbtn{
@@ -41,4 +45,6 @@
     margin-bottom: 0px;
     box-sizing: content-box;
     width: max-content;
+=======
+>>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
 }

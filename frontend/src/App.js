@@ -16,7 +16,10 @@ import Login from './components/login/Login';
 import Dashboard from './components/Dashboard/Dashboard';
 import ProductPage from './components/ProductPage/ProductPage';
 import Loader from './components/Loader/Loader';
+<<<<<<< HEAD
 import CategoryPage from './components/CategoryPage/CategoryPage';
+=======
+>>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
 
 const UserContext = createContext();
 
@@ -94,12 +97,18 @@ function App() {
                     </LoginProtector>
                   }
                 />
+<<<<<<< HEAD
               <Route path="/bookCollection/:id" exact  element={
                 <ProductPage />
               } />
               <Route path="/books/:category" exact  element={
                 <CategoryPage/>
               } />
+=======
+              <Route path="/bookCollection/:id" element={
+                <ProductPage />
+              } />
+>>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
               <Route path="/cart" exact element={<Cart isLogin={isLogin} />}/> 
               <Route path="/login" exact element={<Login />}/> 
               <Route path="*" element={<NoPage />} />

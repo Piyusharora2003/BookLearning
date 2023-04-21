@@ -20,9 +20,12 @@ const bookSchema = new mongoose.Schema({
             type:Number,
             default:0
         },
+<<<<<<< HEAD
         metatags:{
             type:String
         },
+=======
+>>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
         mrp:{
             type:Number,
             default:0

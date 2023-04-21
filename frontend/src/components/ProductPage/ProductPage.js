@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React,{ useEffect , useState} from 'react'
+=======
+import React,{ useEffect, useRef, useState} from 'react'
+>>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
 import { useParams } from 'react-router';
 import style from "./ProductPagedesign.module.css"
 import axios from 'axios';
@@ -10,7 +14,10 @@ import { addItemToCart } from '../../redux/slices/userSlice';
 import AddReview from './AddReview';
 import Loader from '../Loader/Loader';
 import Offers from './Offers';
+<<<<<<< HEAD
 import FrequentBuyTogether from '../FrequentBuyTogether/FrequentBuyTogether';
+=======
+>>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
 
 // Gives Star To each review Box
 function Rating({count}){
@@ -47,7 +54,11 @@ function ProductPage() {
          res.reviews.forEach(element => {
               count+=element.rating/reviewLength;
         });
+<<<<<<< HEAD
         setrating(count);
+=======
+        setrating(count)
+>>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
         }
         getProductDetail(product_id);
     },[]);
@@ -136,8 +147,46 @@ function ProductPage() {
 
 
 
+<<<<<<< HEAD
     {/* Related Books */}
   <FrequentBuyTogether key={params.id}/>
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
       {/* Review Section */}
         {/* <ReviewSection prod={prod}/> */}
         <div className={style.body}>
@@ -163,7 +212,11 @@ function ProductPage() {
                                     <div className={style.nameUser}>
                                         <strong>{elem.name}</strong>
                                       {
+<<<<<<< HEAD
                                         elem.userid === localStorage.getItem("id") ?
+=======
+                                        elem.userid == localStorage.getItem("id") ?
+>>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
                                             <i className={`fa-solid fa-trash ${style.editReview}`} onClick={()=>removeReview()}></i>
                                                 :
                                             <></>
@@ -183,11 +236,62 @@ function ProductPage() {
     })
 }    
 
+<<<<<<< HEAD
 
         </div>
 
 
     </div>
+=======
+    </div>
+    </div>
+        {/* QNA SECTION */}
+          <h1 className={style.h1}>QNA</h1>
+        <div className={`accordion ${style.qnasection}`} id="accordionPanelsStayOpenExample">
+          <div className={style.leftqna}>
+            <div className="accordion-item">
+              <h2 className="accordion-header">
+              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+              Accordion Item #1
+                </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show">
+                <div className="accordion-body">
+                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+                </div>
+            </div>
+            <div className="accordion-item">
+            <h2 className="accordion-header">
+            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+            Accordion Item #2
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse">
+                <div className="accordion-body">
+                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+              </div>
+              </div>
+              <div className="accordion-item">
+              <h2 className="accordion-header">
+              <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+              Accordion Item #3
+              </button>
+              </h2>
+              <div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse">
+              <div className="accordion-body">
+                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={style.rightqna}>
+            <ChatBox prod = {prod}/>
+          </div>
+
+        </div>
+>>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
     </div>
   )
 }

@@ -1,11 +1,18 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react'
+=======
+import React from 'react'
+>>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, redirect, useNavigate } from 'react-router-dom';
 import styles from "./Dashboard.module.css"
 // import Cart from '../Cart/Cart';
 import axios from 'axios';
 import { removeUser } from '../../redux/slices/userSlice';
+<<<<<<< HEAD
 import isEmail from 'validator/lib/isEmail';
+=======
+>>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
 
 
 function Dashboard({changeLoginStatus}) {
@@ -13,10 +20,13 @@ function Dashboard({changeLoginStatus}) {
     const states = useSelector((state)=>state);
     const dispatch = useDispatch()
     const user = states.user;
+<<<<<<< HEAD
     const[editNameMode,setNameEditMode] = useState(false);
     const[editMailMode,setMailMode] = useState(false);
     const [newUserName,AddNewUserName] = useState("");
     const [newUserMail,AddNewUserMail] = useState("");
+=======
+>>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
 
     async function handleLogout(){
         await axios.get('http://localhost:2000/api/v1/logout'); 
@@ -29,6 +39,7 @@ function Dashboard({changeLoginStatus}) {
         // console.log(states) // correct this 
      }
     
+<<<<<<< HEAD
      function changeMailMode(){
        setMailMode(!editMailMode);
      }
@@ -80,15 +91,24 @@ function Dashboard({changeLoginStatus}) {
     }
     return (
         <div className={styles.main}>
+=======
+    return (
+        <div>
+>>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
             <Link to="/" className={styles.prevbtn}>Back<i className="fa-sharp fa-solid fa-arrow-right"></i></Link>
             <div className={styles.Dashboard}>
                 Dashboard
             </div>
+<<<<<<< HEAD
             <table className="table table-bordered border-dark">
+=======
+            <table className="table">
+>>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
               <tbody className='text-center'>
                 <tr>
                   <th scope="row">1</th>
                   <td>Name</td>
+<<<<<<< HEAD
                     <td> 
                       { editNameMode === false ?
                       <span>{user.name}</span> 
@@ -104,10 +124,15 @@ function Dashboard({changeLoginStatus}) {
                     </div>  
                   }
                   </td>
+=======
+                  <td>{user.name}</td>
+                  <td> #button to update name</td>
+>>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
                 </tr>
                 <tr>
                   <th scope="row">2</th>
                   <td>email</td>
+<<<<<<< HEAD
                   <td className={styles.tolowercase}>
                     { editMailMode === false ?
                       <span  className={styles.tolowercase}>{user.email}</span> 
@@ -125,6 +150,11 @@ function Dashboard({changeLoginStatus}) {
                   }
                   </td> 
                  </tr>
+=======
+                  <td className={styles.tolowercase}>{user.email}</td>
+                  <td>#button to update email</td>
+                </tr>
+>>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
                 <tr>
                   <th scope="row">3</th>
                   <td>Role</td>

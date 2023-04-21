@@ -1,0 +1,44 @@
+.main{
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(251, 228, 223);
+}
+
+.prevbtn{
+    position: fixed;
+    top: 1rem;
+    right: 2rem;
+    font-size: 1.7rem;
+    color: black;
+    background-color: transparent;
+}
+
+.Dashboard{
+    font-size: 3rem;
+    padding-left: 2rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+
+.tolowercase{
+    text-transform: none;
+}
+
+/* logout btn for testing  */
+.centerbtn{
+    width: 100%;
+    align-items: center;
+    display: flex;
+}
+.centerbtn button{
+    margin: auto;
+}
+
+.editbtn{
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-bottom: 0px;
+    box-sizing: content-box;
+    width: max-content;
+}

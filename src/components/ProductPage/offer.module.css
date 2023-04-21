@@ -1,0 +1,17 @@
+.list{
+    display: flex;
+    flex-direction: column;
+    list-style:url("../assets/tag-solid.svg");
+    
+}
+
+.listitem{
+    padding: 0.4rem;
+    padding-left: 0;
+    font-weight: 400;
+}
+
+.offerHead{
+    font-weight: 700;
+    font-size: 1.1rem;
+}

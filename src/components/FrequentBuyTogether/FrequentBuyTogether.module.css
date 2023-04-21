@@ -1,0 +1,43 @@
+.main{
+    width: 88vw;
+    margin-inline: auto;
+}
+
+.title{
+    font-size: 1.5rem;
+    padding: 3rem;
+    padding-inline: 1rem;
+    font-weight: 600;
+    text-transform:none;
+}
+
+.titleCard{
+    font-size: 1.5rem;
+    padding: 1rem;
+    font-weight: 600;
+    text-transform:none;
+}
+
+.swipe{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 14rem;
+    height: 400px;
+    padding-top: 3px;
+}
+
+.image{
+    width: 13rem;
+    margin: auto;
+    height: 15rem;
+}
+
+.spacebtw{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

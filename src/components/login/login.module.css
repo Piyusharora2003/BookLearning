@@ -1,0 +1,57 @@
+.login,
+.image {
+  height: 100vh;
+}
+
+.bgImage {
+  background-image: url('file:///C:/Users/piyus/Downloads/Bookshop-bro.svg');
+  background-size: cover;
+  background-position: center center;
+}
+.h70{
+  height: 70%;
+}
+
+.wMax{
+  box-sizing: content-box;
+}
+
+.box{
+  box-shadow: rgba(0, 0, 0.02, 0.07) 0px 3px 5px;
+}
+
+.prevbtn{
+  position: fixed;
+  top: 1rem;
+  left: 2rem;
+  font-size: 1.7rem;
+  color: black;
+  background-color: transparent;
+}
+
+.title{
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+
+.adjacent{
+  display: flex;
+  justify-content: space-between;
+}
+
+.form input{
+  text-decoration: none;
+  text-transform: none;
+}
+
+.signupbtn{
+  background-color: inherit;
+  color: blue;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3rem;
+}
+
+.signup{
+  text-transform: none;
+}

@@ -1,0 +1,129 @@
+.heading{
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    margin-top: 1rem;
+    padding-top: 1.8rem;
+    padding-bottom:1.8rem;
+}
+
+.heading::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left:0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 0.01vh;
+    background: rgba(0,0,0,0.1);
+    z-index: -1;
+}
+
+.heading span{
+    font-size: 2.3rem;
+    font-family:'Times New Roman', Times, serif;
+    padding: 1rem 2rem;
+    z-index: -1;
+    color: #444;
+    border: 0.2rem solid rgb(219, 215, 215);
+
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+
+.item{
+    font-family: "Inter", sans-serif;
+    color: #111;
+    background: #f5f6f8;
+    height: 360px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    width: min(280px,30vw);
+    margin: 0;
+}
+
+.img{
+    width: 100%;
+    max-width: 300px;
+    height: 400px;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+  }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 24px 25px;
+    color: #fff;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      0deg,
+      #020024 0%,
+      #000032a1 3%,
+      #17d9ff00 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.main{
+    width: 88vw;
+    margin: auto;
+}
+
+.heading{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.swiper{
+    display: flex;
+    transition: 20ms;
+    scroll-behavior: smooth;
+}
+
+.btn{
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+}
+
+.btnNext{
+    position:absolute;
+    top: 30%;
+    right: 0;
+    z-index: 2;
+    background:none;
+    padding: 2rem;
+    font-size: 3rem;
+    color: #000000;
+    transform: translateX(+2rem);
+}
+.btnPrev{
+    position:absolute;
+    background:none;
+    padding: 2rem;
+    font-size: 3rem;
+    top: 30%;
+    color: #000000;
+    left: 0;
+    z-index: 2;
+    transform: translateX(-5rem);
+
+}
+
+.btnParent{
+    position: relative;
+}
+
+.item:hover{
+    scale: 0.99;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.48) 2px 2px 2px 1px;
+}

@@ -6,7 +6,6 @@ export const data = [
         "description": "The book emphasizes the importance of taking responsibility for one's own life and choices, rather than blaming past experiences or external factors.",
         "price": 400,
         "image": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51y34ZoVTTL._SX324_BO1,204,203,200_.jpg",
-<<<<<<< HEAD
         "__v": 0,
         "mrp": 550,
         "reviews": []
@@ -119,26 +118,5 @@ export const data = [
         ],
         "__v": 22,
         "mrp": 300
-=======
-        "__v": 0
-    },
-    {
-        "_id": "64275ca9533cafd8f9468587",
-        "title": "The Courage To Be ",
-        "author": "ICHIRO KISHIMI",
-        "description": "The book emphasizes the importance of taking responsibility for one's own life and choices, rather than blaming past experiences or external factors.",
-        "price": 410,
-        "image": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51y34ZoVTTL._SX324_BO1,204,203,200_.jpg",
-        "__v": 0
-    },
-    {
-        "_id": "64275ca9533cafd8f9468557",
-        "title": "The  To Be ",
-        "author": "ICHIRO KISHIMI",
-        "description": "The book emphasizes the importance of taking responsibility for one's own life and choices, rather than blaming past experiences or external factors.",
-        "price": 430,
-        "image": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51y34ZoVTTL._SX324_BO1,204,203,200_.jpg",
-        "__v": 0
->>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
     }
 ]

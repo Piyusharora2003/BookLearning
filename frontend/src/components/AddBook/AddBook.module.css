@@ -52,7 +52,6 @@
 
 .note{
   position: fixed;
-<<<<<<< HEAD
   bottom: 0.2vh;
   color: rgb(255, 51, 51);
   font-size: smaller;
@@ -60,8 +59,4 @@
 
 .left{
   overflow: scroll; 
-=======
-  bottom: 1.3vh;
-  color: rgb(255, 51, 51);
->>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
 }

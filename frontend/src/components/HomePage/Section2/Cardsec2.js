@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // import * as React from 'react'
 // import cardstyle from "./cardstyle.module.css";
 // import { useDispatch } from 'react-redux';
@@ -64,44 +63,18 @@ import styles from "./Section2.module.css"
 import { useDispatch } from 'react-redux';
 import {  useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
-=======
-import * as React from 'react'
-import cardstyle from "./cardstyle.module.css";
-import { useDispatch } from 'react-redux';
-import {  toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { addItemToCart } from '../../../redux/slices/userSlice';
-import {  useNavigate } from 'react-router-dom';
->>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
 
 
 function Cardsec2(props) {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-<<<<<<< HEAD
     const {author , title , price , image , _id} = props;
     function dispatchcall(){
-=======
-
-
-
-    const {author,title, description , price,mrp,image,_id} = props;
-    let des = description
-    des = des.slice(0,100);
-    des+="...."
-
-    function dispatchcall(){
-
->>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
         dispatch(addItemToCart({
             productId:_id,
             name:title,
             price:price,
-<<<<<<< HEAD
             mrp:props.mrp,
-=======
-            mrp:mrp,
->>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a
             quantity:1,
             image:image
         }))
@@ -122,7 +95,6 @@ function Cardsec2(props) {
     }
 
     function navigateCall(){
-<<<<<<< HEAD
         navigate(`/bookCollection/${props._id}`);
     }
 
@@ -144,23 +116,3 @@ function Cardsec2(props) {
 }
 
 export default Cardsec2
-=======
-        navigate(`/bookCollection/${_id}`);
-    }
-    
-return (
-        <div className={`card ${cardstyle.body}`}>
-          <img src={image} className={`card-img-top ${cardstyle.image}`} alt={title}  onClick={e=>{navigateCall()}} />
-          <div className="card-body mt-1">
-            <h5 className={`card-title ${cardstyle.title} `}  onClick={e=>{navigateCall()}} >{title} :({author})</h5>
-            <p className={`card-text ${cardstyle.description} `}  onClick={e=>{navigateCall()}} >{des}</p>
-            <button  className={`btn btn-secondary ${cardstyle.btn}`} onClick={e=> {dispatchcall();}}>Add To cart for ${price}  &nbsp;
-            <i className="fas fa-cart-shopping"></i>
-            </button>
-            </div>
-        </div>
-  )
-}
-
-export default Cardsec2;
->>>>>>> 89f22d1283cfd8e983f92f3cb3b6e1543c71f61a

@@ -5,37 +5,49 @@ import { data } from '../dummy/data';
 import Cardsec2 from '../HomePage/Section2/Cardsec2';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function FrequentBuyTogether({bookid,title}) {
-    const responseFromMLServer = data.slice(0,10); //Currently Dummy Data
+    // const responseFromMLServer = data.slice(0,10); //Currently Dummy Data
     const [invalidresponse,setvalid] = useState(true);
-
+    const [recommend,setrecommend] = useState([])
     const query = {
       query:title
     }
-
-  async function getRecomendedBooks(){
-    const res = await axios.post(
-      "http://localhost:1000/recommend_books",  
-      query,
-      { withCredentials: true ,} 
-      );
-      console.log(res.data);
-    // const res2 =  (await axios.get(`http://localhost:1000/fiction`, { withCredentials: true })).data;
-
-      }
-  getRecomendedBooks()
+    useEffect(()=>{
+      async function getRecomendedBooks(){
+        const res = await axios.post(
+          "http://localhost:1000/recommend_books",  
+          query,
+          { withCredentials: true } 
+          );
+          if(res.data){
+            // console.log(res.data.data);
+            setrecommend(res.data.data);
+            setvalid(false);
+            
+          }
+        }
+        getRecomendedBooks()
+      },[])
   return (
     <div className={style.main}>
         <div className={style.title}>
         You might be interested in
         </div>
         <div className={style.swipe}>
-      {invalidresponse ? <>No recommendation for the product right now you may search for some popular products<Link to={'/'} className={style.linkto}>here</Link></>:
-          
-        responseFromMLServer.map((elem)=>{
-          return <FrequentBuyCard key={elem._id} {...elem}/>
-        })
+      {invalidresponse ? 
+          <>
+          No recommendation for the product right now you may search for some popular products<Link to={'/'} className={style.linkto}>here</Link>
+          </>:
+          <>
+          {
+            recommend.map((elem,index)=>{
+              // console.log(elem);
+              return <FrequentBuyCard key={index} title ={elem.title}/>
+            })
+          }
+        </>
              
     }
       </div>
@@ -43,4 +55,4 @@ function FrequentBuyTogether({bookid,title}) {
   )
 }
 
-export default FrequentBuyTogether
+export default FrequentBuyTogether;

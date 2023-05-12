@@ -41,9 +41,10 @@ function Section2() {
       const encodedTitle = urlEncode(titleexampleone);
       const res = await axios.post(`http://localhost:2000/api/v1/getbookbytitle`,{title:titleexampleone});
       // console.log(res.data.book);
-      console.log(onebookdata.data.title);
+      // console.log(onebookdata.data.title);
       // console.log(bookdata.data.items);
-      setbooks(bookdata.data.items)
+      setbooks(onebookdata.data.title)
+      // console.log(books);
     }
     getFamousBooks();
 },[])
@@ -59,8 +60,10 @@ function Section2() {
       <div className={` ${styles.btnParent}`}>
       <Swiper id="trendingSwiper" 
       slidesPerView={noperslide} className={styles.swiper}
-      >      {books.map((elem)=>{
-        return <SwiperSlide key={elem._id}><Cardsec2 {...elem}/></SwiperSlide>
+      >
+        {books.map((elem,index)=>{
+      
+        return <SwiperSlide key={index}><Cardsec2 title={elem}/></SwiperSlide>
       })}
       </Swiper>
       <button className={styles.btnPrev} onClick={()=>{

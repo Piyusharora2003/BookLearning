@@ -64,32 +64,59 @@ import { useDispatch } from 'react-redux';
 import {  useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 
-function Cardsec2(props) {
+function Cardsec2({title}) {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const {author , title,  price , image,rating ,_id} = props;
-    const bookrating = Math.ceil(rating);
+    
+    const [bookdetail,adddetail] = useState({
+        "_id": "",
+        "title": "",
+        "author": "",
+        "Summary": "",
+        "price": 0,
+        "mrp": 0,
+        "image": "",
+        "rating": 0,
+        "reviews": [],
+    })
+    
+    const bookrating = Math.ceil(bookdetail.rating);
+    useEffect(()=>{
+        async function getdetails(){
+            const res = await axios.post(`http://localhost:2000/api/v1/getbookbytitle`,{title:title});
+            if(res.status !== 200){
+                return undefined;
+            }
+            console.log(res.data.book);
+            adddetail(res.data.book)
+        }
+        getdetails()
+    },[])
+
     async function dispatchcall(){
         const newbook = {
-            "title":title,
-            "author":author,
-            "price":price,
-            "image":image,
-            "bookpdf":"link",
-            "Summary":"",
-            "price":price,
-            mrp:((100+(Math.random()*15))/100)*price
+            "title":bookdetail.title,
+            "author":bookdetail.author,
+            "price":bookdetail.price,
+            "image":bookdetail.image,
+            "bookpdf":"",
+            "Summary":bookdetail.Summary,
+            "price":bookdetail.price,
+            mrp:bookdetail.mrp
         }
+
         await axios.post("http://localhost:2000/api/v1/addnewbook",newbook).then((res)=>{console.log(res);})
         dispatch(addItemToCart({
-            productId:_id,
-            name:title,
-            price:price,
-            mrp:props.mrp,
+            productId:bookdetail._id,
+            name:bookdetail.title,
+            price:bookdetail.price,
+            mrp:bookdetail.mrp,
             quantity:1,
-            image:image
+            image:bookdetail.image
         }))
 
         // toast(,{className:`{cardstyle.toast}`});
@@ -108,19 +135,19 @@ function Cardsec2(props) {
     }
 
     function navigateCall(){
-        navigate(`/bookCollection/${props._id}`);
+        navigate(`/bookCollection/${bookdetail._id}`);
     }
 
   return (
     <div className={styles.item} >
-    <img className={styles.img}  src={image} alt=""/>
+    <img className={styles.img}  src={bookdetail.image} alt=""/>
     <div className={styles.overlay}>
         <div onClick={navigateCall} >
             <div className={`text-center fw-bolder fs-5 ${styles.titlelimit}`}>{title}</div>
-            <div className={`text-center fw-bold text-secondary fs-6`}>{author}</div>
+            <div className={`text-center fw-bold text-secondary fs-6`}>{bookdetail.author}</div>
         </div>
         <div className="d-flex flex-column w-88 ms-auto me-auto">
-        <button className={`btn btn-danger mb-2`}> ₹{price}   <i className="fa-solid fa-tag"></i></button>
+        <button className={`btn btn-danger mb-2`}> ₹{bookdetail.price}   <i className="fa-solid fa-tag"></i></button>
         <button className={`btn btn-primary mb-2`} onClick={e=> {dispatchcall();} }>Add To cart <i className="fa-sharp fa-solid fa-cart-plus"></i></button>
         <button className={`btn btn-warning`} onClick={navigateCall}>Read More  <i className="fa-solid fa-eye fa-xs"></i></button>
         </div>

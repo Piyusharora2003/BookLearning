@@ -8,7 +8,7 @@ function Login() {
     const [newbook,adddetail] = useState({
         "title":"",
         "author":"",
-        "description":"",
+        "Summary":"",
         "price":0,
         "mrp":0,
         "image":"",
@@ -24,13 +24,13 @@ function Login() {
     async function submit(){
         const bookname = newbook.title;
         await axios.post("http://localhost:2000/api/v1/addnewbook",newbook).then((res)=>{console.log(res)});
-        adddetail({  "title":"",  "author":"",  "description":"","metatags":"",  "price":0,"mrp":0,  "image":"",  "bookpdf":"" });
+        adddetail({  "title":"",  "author":"",  "Summary":"","metatags":"",  "price":0,"mrp":0,  "image":"",  "bookpdf":"" });
         alert(`Book ${bookname} added Successfully`);
     }
     
     const disabled = ()=>{
-        const {title,author,description,image,bookpdf} = newbook
-        if(title ==="" || author === "" || description.length < 120 || image === 0 || bookpdf === "" ){
+        const {title,author,Summary,image,bookpdf} = newbook
+        if(title ==="" || author === "" || Summary.length < 120 || image === 0 || bookpdf === "" ){
             return 1;
         }
         return 0;
@@ -56,8 +56,8 @@ function Login() {
                           </div>
                           <div>&lt;---Categories List to be Inserted Here---&gt;</div>
                           <div className="form-group">
-                              <label className={styles.label} htmlFor="description">Description</label>
-                              <input className={`form-control`} id="description" type="text" name="description"  onChange={(e)=>updateDetails(e)} value={newbook.description}/>
+                              <label className={styles.label} htmlFor="Summary">Summary</label>
+                              <input className={`form-control`} id="Summary" type="text" name="Summary"  onChange={(e)=>updateDetails(e)} value={newbook.Summary}/>
                           </div>
                           <div className="form-group">
                               <label className={styles.label} htmlFor="metatags">Meta-Tags</label>
@@ -81,7 +81,7 @@ function Login() {
                           </div>
                           <input className={`btn btn-primary ${styles.btn}`}  disabled ={disabled()}  onClick={submit} value="Publish" />
                     </div>
-                    <div className={styles.note}> * Book title Should be unique and the description of the book should atleast be of 120 letters </div>
+                    <div className={styles.note}> * Book title Should be unique and the Summary of the book should atleast be of 120 letters </div>
             </div>
         </div>
         <div className={`col-md-7 d-none d-md-flex ${styles.bgImage}`}></div>

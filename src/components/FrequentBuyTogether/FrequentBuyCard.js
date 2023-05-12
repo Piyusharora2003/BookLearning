@@ -1,6 +1,5 @@
 import React from 'react'
 import style from "./FrequentBuyTogether.module.css"
-import { useNavigate } from 'react-router-dom'
 
 //         "_id": "64275ca9533cafd8f9468587",
 // "title": "The Courage To Be ",
@@ -12,19 +11,14 @@ import { useNavigate } from 'react-router-dom'
 
 
 function FrequentBuyCard(props) {
-    const navigate = useNavigate();
-    function navigateCall(){
-        navigate(`/bookCollection/${props._id}`);
-        window.location.reload()
-    }
+    
   return (
        <div className={`card ${style.card}`}>
             <img src={props.image} className={`card-img-top ${style.image}`} alt="..."/>
             <div className={`card-body ${style.spacebtw}`}>
                 <h5 className="card-title">{props.title}</h5>
-                <button  className={`btn btn-primary ${style.btn}`} onClick={e=>{navigateCall()}}>Add To cart for ${props.price}  &nbsp;</button>
+                <h6 className='text-secondary'>Author</h6>
             </div>
-
         </div>
   )
 }

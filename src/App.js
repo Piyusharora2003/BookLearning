@@ -9,6 +9,7 @@ import './App.css';
 import Home from './components/HomePage/Home';
 import NoPage from './components/NoPage/NoPage';
 import AddBook from './components/AddBook/AddBook';
+import Footer from './components/Footer/Footer.js';
 import Cart from './components/Cart/Cart';
 import { ToastContainer } from 'react-toastify';
 import LoginProtector from './middleware/LoginProtector';
@@ -108,6 +109,7 @@ function App() {
       <br/>
       <br/>
           <ToastContainer />
+        {/* <Footer/> */}
       </UserContext.Provider>
 
   );

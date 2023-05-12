@@ -20,7 +20,7 @@ function Cart(props) {
     let tax = 0.18*pricecart.toPrecision(2);
 
     function orderHandle(){
-        navigate('/dashboard')
+        navigate(`https://college-project-fqss.vercel.app:/index.html?pa=8743862358@paytm&pn=piyush&cu=INR&am=${pricecart+tax}`)
     }
     async function removeFromCart(e){
         const userId =  localStorage.getItem("id");
@@ -28,6 +28,7 @@ function Cart(props) {
         const res = await axios.delete(`http://localhost:2000/api/v1/usercustom/${userId}/items/${productId}`)
         window.location.reload()
     }
+
     return (
     <div>
       <button className={styles.orderNowbtn} onClick={orderHandle}>Order Now</button>
@@ -58,7 +59,7 @@ function Cart(props) {
     itemList.map((e)=>{
       return <tr key={e.productId}>
       <th scope="row" className={styles.productId}>{e.productId}</th>
-      <td>{e.name}</td>
+      <td className={styles.name} onClick={()=>{navigate(`/bookCollection/${e.productId}`);}}>{e.name}</td>
       <td>{e.price}</td>
       <td>{e.mrp}</td>
       <td>{e.quantity}</td>

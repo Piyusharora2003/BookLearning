@@ -27,6 +27,14 @@
     border-radius: 1.4rem;
     background-color: rgb(66, 176, 66);
 }
+.name{
+    transition: all 0.3s ease-in;
+    cursor: default;
+}
+.name:hover{
+    color: blue;
+    text-decoration: underline;
+}
 
 @media screen and (max-width: 991px) {
     .productId{

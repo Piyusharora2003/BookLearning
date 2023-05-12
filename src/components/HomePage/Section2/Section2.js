@@ -1,4 +1,4 @@
-import React,{useRef ,useContext} from 'react';
+import React,{useRef ,useContext , useEffect, useState} from 'react';
 import styles from "./Section2.module.css";
 import Cardsec2 from './Cardsec2';
 import { UserContext } from '../../../App';
@@ -8,6 +8,18 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import axios from 'axios';
+
+function allequal(a,b){
+  if(a === b){
+    return true;
+  }
+  return false;
+}
+
+function urlEncode(str) {
+  return str.replace(/\s/g, '%20');
+}
 
 
 function Section2() {
@@ -20,8 +32,22 @@ function Section2() {
     if(windowSize.current[0] < 610){
       noperslide = 1
     }
-    const books = useContext(UserContext);
-    let arr =[...books].slice(0,8)    // currently taking the first eight products only
+    const [books,setbooks] = useState([]);
+    useEffect(()=>{
+    async function getFamousBooks(){
+      const bookdata = await axios.get('http://localhost:2000/api/v1/getfamousbooks');
+      const onebookdata = await axios.get('http://localhost:1000/popular')
+      const titleexampleone = "Harry Potter and the Goblet of Fire (Book 4)";
+      const encodedTitle = urlEncode(titleexampleone);
+      const res = await axios.post(`http://localhost:2000/api/v1/getbookbytitle`,{title:titleexampleone});
+      // console.log(res.data.book);
+      console.log(onebookdata.data.title);
+      // console.log(bookdata.data.items);
+      setbooks(bookdata.data.items)
+    }
+    getFamousBooks();
+},[])
+
     return (
       <div className={styles.main}>
           <h1 className={styles.heading}>
@@ -33,8 +59,8 @@ function Section2() {
       <div className={` ${styles.btnParent}`}>
       <Swiper id="trendingSwiper" 
       slidesPerView={noperslide} className={styles.swiper}
-      >      {arr.map((elem)=>{
-        return <SwiperSlide key={elem._id}><Cardsec2 {...elem}  key={elem}/></SwiperSlide>
+      >      {books.map((elem)=>{
+        return <SwiperSlide key={elem._id}><Cardsec2 {...elem}/></SwiperSlide>
       })}
       </Swiper>
       <button className={styles.btnPrev} onClick={()=>{

@@ -2,6 +2,7 @@ import React from 'react';
 
 import Section1 from './Section1/Section1.js';
 import Section2 from './Section2/Section2.js';
+import Section4 from './Section4/Section4.js';
 import Navbar from '../Navbar/Navbar.js';
 import Section3 from './Section3/Section3.js';
 
@@ -13,6 +14,7 @@ function Home() {
           <Section1/>
           <Section2/>
           <Section3/>
+          <Section4/>
     </div>
   )
 }

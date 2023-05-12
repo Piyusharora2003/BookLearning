@@ -1,6 +1,7 @@
 import React from 'react';
 import {Outlet , Link} from "react-router-dom"
 import style from "./Navbarcss.module.css";
+import { HashLink as Linked } from 'react-router-hash-link';
 
 
 function Navbar() {
@@ -28,7 +29,7 @@ function Navbar() {
                       </li>
                     </ul>
                   <div className={style.iconsgrp}>
-                    <Link to="#search" className={style.icons} > <i className="fas fa-search "></i> </Link>
+                    <Linked to="#search" className={style.icons} > <i className="fas fa-search "></i> </Linked>
                     <Link to="/cart" className={style.icons} > <i className="fas fa-shopping-cart "></i> </Link>
                     <Link to="/dashboard" className={style.icons} > <i className="fas fa-user "></i> </Link>
                   </div>

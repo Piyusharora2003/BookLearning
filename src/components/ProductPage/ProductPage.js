@@ -36,7 +36,6 @@ function ProductPage() {
   const [prod , putProduct] = useState(null);
   const [ratin,setrating] = useState(0);
   const dispatch = useDispatch();
-      
       // const books = useContext(UserContext);
       useEffect(()=>{
       async function getProductDetail(id){
@@ -126,7 +125,7 @@ function ProductPage() {
                   </h2>
                   <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                       <div className="accordion-body">
-                          {prod.description}
+                          {prod.Summary}
                       </div>
                   </div>
                 </div>
@@ -137,7 +136,7 @@ function ProductPage() {
 
 
     {/* Related Books */}
-  <FrequentBuyTogether key={params.id}/>
+  <FrequentBuyTogether key={params.id} title={prod.title} bookid={prod._id}/>
       {/* Review Section */}
         {/* <ReviewSection prod={prod}/> */}
         <div className={style.body}>

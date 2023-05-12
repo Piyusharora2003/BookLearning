@@ -1,0 +1,43 @@
+.body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 97%;
+    margin-inline: auto;
+    justify-content: space-between;
+    
+}
+
+.cardmain{
+    border: 2px solid darkblue;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 400px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.image{
+    height: 60%;
+    display: flex;
+}
+
+.image img{
+    margin: auto;
+    height: 100%;
+}
+
+.title{
+    height: 15%;
+    font-size: 1.2vw;
+}
+
+.author{
+    height: 10%;
+    color: gray
+}
+
+.btn{
+    height: 15%;
+}

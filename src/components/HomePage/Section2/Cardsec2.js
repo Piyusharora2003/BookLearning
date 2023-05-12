@@ -63,13 +63,26 @@ import styles from "./Section2.module.css"
 import { useDispatch } from 'react-redux';
 import {  useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 
 function Cardsec2(props) {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const {author , title , price , image , _id} = props;
-    function dispatchcall(){
+    const {author , title,  price , image,rating ,_id} = props;
+    const bookrating = Math.ceil(rating);
+    async function dispatchcall(){
+        const newbook = {
+            "title":title,
+            "author":author,
+            "price":price,
+            "image":image,
+            "bookpdf":"link",
+            "Summary":"",
+            "price":price,
+            mrp:((100+(Math.random()*15))/100)*price
+        }
+        await axios.post("http://localhost:2000/api/v1/addnewbook",newbook).then((res)=>{console.log(res);})
         dispatch(addItemToCart({
             productId:_id,
             name:title,
@@ -103,7 +116,7 @@ function Cardsec2(props) {
     <img className={styles.img}  src={image} alt=""/>
     <div className={styles.overlay}>
         <div onClick={navigateCall} >
-            <div className={`text-center fw-bolder fs-5`}>{title}</div>
+            <div className={`text-center fw-bolder fs-5 ${styles.titlelimit}`}>{title}</div>
             <div className={`text-center fw-bold text-secondary fs-6`}>{author}</div>
         </div>
         <div className="d-flex flex-column w-88 ms-auto me-auto">
@@ -112,7 +125,8 @@ function Cardsec2(props) {
         <button className={`btn btn-warning`} onClick={navigateCall}>Read More  <i className="fa-solid fa-eye fa-xs"></i></button>
         </div>
     </div>
-  </div>  )
+  </div>
+  )
 }
 
-export default Cardsec2
+export default Cardsec2;

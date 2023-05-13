@@ -19,6 +19,7 @@
     position: fixed;
     bottom: 1rem;
     right: 2rem;
+    text-decoration: none;
     font-size: 1.7rem;
     color: black;
     padding: 0.3rem;

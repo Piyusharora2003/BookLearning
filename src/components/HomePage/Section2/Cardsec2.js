@@ -1,63 +1,5 @@
-// import * as React from 'react'
-// import cardstyle from "./cardstyle.module.css";
-// import { useDispatch } from 'react-redux';
 import {  toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 import { addItemToCart } from '../../../redux/slices/userSlice';
-// import {  useNavigate } from 'react-router-dom';
-
-
-// function Cardsec2(props) {
-//     const navigate = useNavigate();
-//     const dispatch = useDispatch();
-
-
-
-//     const {author,title, description , price,mrp,image,_id} = props;
-//     let des = description
-//     des = des;
-//     des+="...."
-
-//     function dispatchcall(){
-
-//         dispatch(addItemToCart({
-//             productId:_id,
-//             name:title,
-//             price:price,
-//             mrp:mrp,
-//             quantity:1,
-//             image:image
-//         }))
-
-//         // toast(,{className:`{cardstyle.toast}`});
-//         toast.success(`Book : ${title} is added to cart`, {
-//             position: "top-right",
-//             autoClose: 3000,
-//             hideProgressBar: false,
-//             closeOnClick: true,
-//             pauseOnHover: true,
-//             draggable: true,
-//             progress: undefined,
-//             theme: "light",
-//             });
-//         // add it to users db 
-        
-//     }
-
-//     function navigateCall(){
-//         console.log("is called");
-//         navigate(`/bookCollection/${_id}`);
-//     }
-    
-// return (
-//         <div className={`card ${cardstyle.body}`}>
-//           <img src={image} className={`card-img-top ${cardstyle.image}`} alt={title}  onClick={e=>{navigateCall()}} />
-//           <div className="card-body mt-1">
-//             <h5 className={`card-title ${cardstyle.title} `}  onClick={e=>{navigateCall()}} >{title} :({author})</h5>
-//             <p className={`card-text ${cardstyle.description} `}  onClick={e=>{navigateCall()}} >{des}</p>
-//             <button  className={`btn btn-secondary ${cardstyle.btn}`} onClick={e=> {dispatchcall();}}>Add To cart for ${price}  &nbsp;
-//             <i className="fas fa-cart-shopping"></i>
-
 import * as React from 'react';
 import styles from "./Section2.module.css"
 import { useDispatch } from 'react-redux';
@@ -84,14 +26,13 @@ function Cardsec2({title}) {
         "reviews": [],
     })
     
-    const bookrating = Math.ceil(bookdetail.rating);
     useEffect(()=>{
         async function getdetails(){
             const res = await axios.post(`http://localhost:2000/api/v1/getbookbytitle`,{title:title});
             if(res.status !== 200){
                 return undefined;
             }
-            console.log(res.data.book);
+            // console.log(res.data.book);
             adddetail(res.data.book)
         }
         getdetails()
@@ -142,7 +83,7 @@ function Cardsec2({title}) {
     <div className={styles.item} >
     <img className={styles.img}  src={bookdetail.image} alt=""/>
     <div className={styles.overlay}>
-        <div onClick={navigateCall} >
+        <div onClick={navigateCall} className={styles.s50} >
             <div className={`text-center fw-bolder fs-5 ${styles.titlelimit}`}>{title}</div>
             <div className={`text-center fw-bold text-secondary fs-6`}>{bookdetail.author}</div>
         </div>

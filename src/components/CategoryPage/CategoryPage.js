@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router';
 import style from "./style.module.css";
-
+import imgd from "./assets/broken.gif"
 function allequal(a,b,c){
   if(a === b && a === c){
     return true;
@@ -12,12 +12,18 @@ function allequal(a,b,c){
 
 function Card(props){
   const {title,author,image} = props;
+  const img = new Image();
+  img.src = image;
     return(
       <div className={style.cardmain}>
-        <div className={style.image}><img src={image} alt={title} /></div>
+        <div className={style.image}>
+        {(img.naturalWidth === 1 || img.naturalHeight === 1)?        
+        <img src={imgd} alt={title} />
+        :
+          <img src={image} alt={title} />
+}</div>
         <div className={style.title}>{title.slice(0,60)}</div>
         <div className={style.author}>{author}</div>
-        <div className={style.btn}><button>Add to cart</button></div>
       </div>
     )
 }

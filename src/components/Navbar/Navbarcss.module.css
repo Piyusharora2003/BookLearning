@@ -23,7 +23,7 @@
 }
 
 .icons:hover{
-    color: white;
+    color: rgb(216, 98, 249);
 }
 
 @media screen and (max-width: 991px) {

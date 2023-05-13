@@ -5,31 +5,36 @@
     width: 97%;
     margin-inline: auto;
     justify-content: space-between;
-    
+    padding-top: 2rem;
 }
 
 .cardmain{
-    border: 2px solid darkblue;
+    /* border: 2px solid darkblue; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     display: flex;
     flex-direction: column;
-    width: 250px;
-    height: 400px;
-    padding: 1rem;
+    width: 250px; 
+    height: 380px;
+    padding-inline: 1rem;
+    padding-top: 1.4rem;
     margin-bottom: 2rem;
 }
 
 .image{
     height: 60%;
+    margin-bottom: 3px;
+    width: 100%;
     display: flex;
 }
 
 .image img{
     margin: auto;
+    width: 90%;
     height: 100%;
 }
 
 .title{
-    height: 15%;
+    /* height: 15%; */
     font-size: 1.2vw;
 }
 

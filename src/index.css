@@ -1,8 +1,11 @@
 :root{
-    --green:#27ae60;
+    --green:#ffffff;
     --border:.1rem solid rgba(0,0,0,.1);
     --border-hover:.1rem solid #444;
     --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+body{
+    /* background-color: #ebcdff; */
 }
 
 *{

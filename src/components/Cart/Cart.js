@@ -19,9 +19,7 @@ function Cart(props) {
     });
     let tax = 0.18*pricecart.toPrecision(2);
 
-    function orderHandle(){
-        navigate(`https://college-project-fqss.vercel.app:/index.html?pa=8743862358@paytm&pn=piyush&cu=INR&am=${pricecart+tax}`)
-    }
+    
     async function removeFromCart(e){
         const userId =  localStorage.getItem("id");
         const productId = e;
@@ -31,7 +29,7 @@ function Cart(props) {
 
     return (
     <div>
-      <button className={styles.orderNowbtn} onClick={orderHandle}>Order Now</button>
+      <a className={styles.orderNowbtn} href={`https://college-project-fqss.vercel.app/index.html?pa=8743862358@paytm&pn=BookHive&cu=INR&am=${pricecart+tax}`}>Order Now</a>
       {  (props.isLogin === false)?
 
            <div className="alert alert-danger d-flex align-items-center" role="alert">

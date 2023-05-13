@@ -1,10 +1,11 @@
 import React,{useEffect,useState} from 'react'
 import style from "./FrequentBuyTogether.module.css"
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 function FrequentBuyCard({title}) {
+  const navigate = useNavigate();
 
   const [bookdetail,adddetail] = useState({
     "_id": "",
@@ -33,13 +34,18 @@ const [dataaquired,setdataaq] = useState(true)
     getdetails()
 },[])
 
+function navcall(){
+  navigate(`/bookCollection/${bookdetail._id}`);
+  window.location.reload()
+}
+
   return (
     <>
 
       
       <div className={`card ${style.card}`}>
      { dataaquired ? 
-              <Link className={style.todefault} to={`/bookCollection/${bookdetail._id}`} onClick={()=>{window.location.reload()}}>
+              <Link className={style.todefault} to={`/bookCollection/${bookdetail._id}`} onClick={navcall}>
             <img src={bookdetail.image} className={`card-img-top ${style.image}`} alt="..."/>
             <div className={`card-body ${style.spacebtw}`}>
                 <h5 className="card-title">{bookdetail.title}</h5>

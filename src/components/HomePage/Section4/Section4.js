@@ -1,8 +1,11 @@
 import React from 'react'
+import styles from "./styles.module.css"
 
 function Section4() {
   return (
-    <div id='search'>Section4</div>
+    <div id='search' className={styles.main}>
+      
+    </div>
   )
 }
 

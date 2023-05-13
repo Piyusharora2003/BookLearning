@@ -45,7 +45,7 @@
 }
 
 .discountTag{
-    color: var(--green);
+    color: coral;
     padding-left: 0.7rem;
     font-size: 1.5rem;
     font-weight: 470;
@@ -254,8 +254,8 @@
 
 .author{
     margin-top: 1rem;
-    color: var(--green);
     font-weight: 650;
+    font-size: 1.2rem;
 }
 
  .description{

@@ -105,9 +105,7 @@ function App() {
               <Route path="/login" exact element={<Login />}/> 
               <Route path="*" element={<NoPage />} />
           </Routes>
-      <br/>
-      <br/>
-      <br/>
+
           <ToastContainer />
         {/* <Footer/> */}
       </UserContext.Provider>

@@ -1,3 +1,5 @@
+Link for the db : "https://drive.google.com/file/d/1gTPxwBK6X-GlaVq4DYQGjSpvHlKHDViO/view?usp=drive_link"
+
 BookLearning
 is an E-Commerce MachineLearning  project for selling books online with custom services to the users. It is built using MERN stack (MongoDB, Express.js, Node.js, and React) and utilizes various additional technologies such as Validator, Bcrypt, Body-parser, Cors, Flask, Data Mining, Nodemon, Dotenv, React Router, and Toastify. This project is primarily a learning project aimed at strengthening understanding of the MERN stack and data science concepts. The goal of this project is to provide a personalized experience to the users while purchasing books online.
 
